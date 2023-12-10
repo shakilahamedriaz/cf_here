@@ -2,7 +2,7 @@
 using namespace std;
 
 
-sr_sol(double x, double y)
+void sr_sol(double x, double y)
 {
     if(x == 0.0 && y == 0.0) cout << "Origem" << endl; 
     else if((x > 0.0 && y == 0.0) || (x < 0.0 && y == 0.0)) cout << "Eixo X" << endl;
