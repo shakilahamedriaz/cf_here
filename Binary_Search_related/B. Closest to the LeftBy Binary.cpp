@@ -12,7 +12,7 @@ ll binary_search(ll arr[], ll n, ll query)
 
          if(arr[mid]<=query)
          {
-             anscnt=mid;
+             anscnt=mid+1;
              left=mid+1;
          }
          else
@@ -22,7 +22,7 @@ ll binary_search(ll arr[], ll n, ll query)
          
     }
 
-    return anscnt+1;
+    return anscnt;
    
 }
 
