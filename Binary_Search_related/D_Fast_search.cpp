@@ -2,65 +2,35 @@
 using namespace std;
 #define ll long long
 
-void binary_search(ll arr[], ll n, ll lindex, ll rindex)
+void binary_search(vector<ll>& arr, ll left, ll right, ll& ans_left, ll& ans_right)
 {
+    ans_left = lower_bound(arr.begin(), arr.end(), left) - arr.begin(); 
+    
+    ans_right = upper_bound(arr.begin(), arr.end(), right) - arr.begin() - 1;
+}
 
-    ll left = lindex, right = rindex, anscnt = -1;
+int main() {
+    ll n, k;
+    cin >> n;
 
-    while (left <= right)
-    {
-        ll mid = (left + right) / 2;
+    vector<ll> arr(n);
+    for (ll i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+    sort(arr.begin(), arr.end());
 
-        if (arr[mid] <= query)
-        {
-            anscnt = mid + 1;
-            left = mid + 1;
-        }
-        else
-        {
-            right = mid - 1;
-        }
+    cin >> k;
+    while (k--) {
+        ll left, right;
+        cin >> left >> right;
+
+        ll ans_left, ans_right;
+        binary_search(arr, left, right, ans_left, ans_right);
+
+        
+        ll ans = ans_right - ans_left + 1;
+        cout << ans << " ";
     }
 
-    return anscnt;
-
-}
-
-int main()
-{
-
-ll n,k;
-cin >> n >> k;
-
-ll arr[n];
-for(ll i=0;i<n;i++)
-{
-    cin >> arr[i];
-}
-sort(arr,arr+n);
-
-while(k--)
-{
-
-ll left,right;
-cin >> left >> right;
-
-}
-
-ll lindex,rindex;
-for(ll i=0;i<n;i++)
-{
-    if(arr[i]==left)
-    {
-        lindex=i;
-    }
-    if(arr[i]==right)
-    {
-        rindex=i;
-    }
-
-    binary_search(arr, n, lindex, rindex);
-}
-
-return 0;
+    return 0;
 }
