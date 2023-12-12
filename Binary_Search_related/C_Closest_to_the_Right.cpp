@@ -13,11 +13,11 @@ ll binary_search(ll arr[], ll n, ll query)
          if(arr[mid]>=query)
          {
              anscnt=mid+1;
-             left=mid+1;
+             right=mid-1;
          }
          else
          {
-             right=mid-1;
+                left=mid+1;
          }
          
     }
@@ -38,7 +38,7 @@ void sr_sol(ll arr[], ll query[], ll n, ll k)
         }
         else
         {
-            cout<< 0 <<endl;
+            cout<< n+1 <<endl;
         }
     }
 }
