@@ -1,5 +1,6 @@
 //author:Shakil Ahamed Riaz-(shakilswe)
 //https://codeforces.com/contest/1909/problem/A
+
 #include <bits/stdc++.h>
 using namespace std;
 

@@ -1,4 +1,6 @@
 //author:Shakil Ahamed Riaz-(shakilswe)
+//https://codeforces.com/contest/1914/problem/B
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -33,10 +35,34 @@ void sr_sol() {
     cin >>t;
     while(t--)
     {
-         //play form here
+       int n, k;
+        cin >> n >> k;
+ 
+        if (k == 0)
+        {
+            for (int i=n; i>=1;i--)
+            {
+                cout<<i<< " ";
+            }
+            cout<<N;
+        }
+        else
+        {
+            
+            for (int i = 1; i <= k ; i++)
+            {
+                cout<<i<< " ";
+            }
+ 
+            for (int i=n;i >k ; i--)
+            {
+                cout<<i<< " ";
+            }
+ 
+            cout<<N;
     }
 }
-
+}
 int32_t main() {
 
     ios_base::sync_with_stdio(0);

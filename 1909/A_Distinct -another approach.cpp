@@ -1,4 +1,6 @@
 //author:Shakil Ahamed Riaz-(shakilswe)
+//https://codeforces.com/contest/1909/problem/A
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -11,7 +13,7 @@ using namespace std;
 #define ar array
 #define sza(x) ((int)x.size())
 #define all(a) (a).begin(), (a).end()
-#define PI 3.1415926535897932384626433832795l
+#define PI 3.1415926535897932384626433832795
 #define pb(e) push_back(e)
 #define fst first
 #define snd second
@@ -33,12 +35,44 @@ void sr_sol() {
     cin >>t;
     while(t--)
     {
-         //play form here
+       int n;
+       cin >>n;
+       int u=0,r=0,d=0,l=0;
+       
+       while(n--)
+       {
+
+       int x,y;
+       cin >>x>>y;
+      
+       if(x==0 and y==0)
+       {
+         continue;
+       }
+       else
+       {
+          if(x>0) r++;
+          if(y>0) u++;
+          if(x<0) l++;
+          if(y<0) d++;
+       }
     }
-}
+
+    if(u==0 || r==0 || d==0 || l==0)
+    {
+        cout<< "YES" <<N;
+    }
+    else
+    {
+        cout<< "NO" <<N;
+    }
+
+    }
+}   
 
 int32_t main() {
-
+    
+    
     ios_base::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
     
