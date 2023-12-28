@@ -38,42 +38,39 @@ void sr_sol() {
         cin >>n;
         ll arr[n];
 
-        for(int i=0; i<n; i++)
+        for(int i=1; i<=n; i++)
         {
             cin >>arr[i];
         }
-
-      
         
-        ll asum=0,bsum=0;
-        for(ll i=0; i<n; i+=2)
-        {
-            asum+=arr[i];
-        }
+        unordered_map<ll, ll>mp;
 
-        for(ll i=1; i<n; i+=2)
+        ll lsum=0, dsum=0;
+        string ans= "NO";
+        for(int i=1; i<=n; i++)
         {
-            bsum+=arr[i];
+            if(i%2)
+            {
+                lsum+=arr[i];
+            }
+            else
+            {
+                dsum+=arr[i];
+            }
+
+            ll diff=lsum-dsum;
+
+            if(diff==0 || mp.find(diff) != mp.end())
+            {
+                ans= "YES";
+                break;
+            }
+
+            mp[diff] = i;
         }
         
-       ll dif=asum-bsum;
-
-      if(dif==0) cout<< "YES"<<N;  
-      else if( asum > bsum)
-      {
-         ll temp=asum;
-         for(int i=n-1; i>=0; i-=2)
-         {
-           temp-=arr[i];
-           if(temp==0)
-           {
-              cout<< "YES"<<N;
-              break;
-           }
-         }
-      }
-
-      else cout<< "NO"<<N;
+     
+        cout<< ans<<N;
         
     }
 }
