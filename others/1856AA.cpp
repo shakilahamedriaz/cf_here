@@ -19,7 +19,7 @@ using namespace std;
 #define snd second
 #define pr pair<int, int>
 #define mp make_pair
-#define for(i, a, n) for (int i = a; i < n; i++)
+#define fl(i, a, n) for (int i = a; i < n; i++)
 #define sqr(a) (a)*(a)
 #define mod 1000000007
 #define N "\n"
@@ -67,6 +67,7 @@ int32_t main()
     ios_base::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
 
+    //sr_sol = shakil riaz's solution
     sr_sol();
 
     return 0;
