@@ -1,5 +1,6 @@
+
 //author:Shakil Ahamed Riaz-(shakilswe)
-//https://codeforces.com/contest/1915/problem/E
+//https://codeforces.com/problemset/problem/200/B
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -28,51 +29,22 @@ using namespace std;
 int gcd(int a, int b) { if(a % b == 0) return b; else return gcd(b, a % b); }
 int lcm(int a, int b) { return (a * b) / gcd(a, b); }
 
-void sr_sol() {
+void sr_sol()
+{
+  
+    ll n;
+    cin >>n;
+    ll arr[n];
     
-    int t;
-    cin >>t;
-    while(t--)
-    {
-        ll n;
-        cin >>n;
-        ll arr[n+10];
+    ld sum=0;
 
-        for(int i=1; i<=n; i++)
-        {
-            cin >>arr[i];
-        }
-        
-        unordered_map<ll, ll>mp;
-
-        ll lsum=0, dsum=0;
-        string ans= "NO";
-        for(int i=1; i<=n; i++)
-        {
-            if(i%2)
-            {
-                lsum+=arr[i];
-            }
-            else
-            {
-                dsum+=arr[i];
-            }
-
-            ll diff=lsum-dsum;
-
-            if(diff==0 || mp.find(diff) != mp.end())
-            {
-                ans= "YES";
-                break;
-            }
-
-            mp[diff] = i;
-        }
-        
-     
-        cout<< ans<<N;
-        
+    for(int i=0; i<n; i++)
+    {   
+        cin >>arr[i];
+        sum+=arr[i];
     }
+    
+    cout<< fixed << setprecision(12)<<sum/n<<N;
 }
 
 int32_t main() {
