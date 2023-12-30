@@ -49,7 +49,7 @@ void sr_sol() {
         }
      }
 
-     cout<< cnt <<N;
+     cout<< cnt/2 <<N;
 }
 
 int32_t main() {

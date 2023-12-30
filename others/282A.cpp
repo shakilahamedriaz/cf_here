@@ -1,6 +1,4 @@
 //author:Shakil Ahamed Riaz-(shakilswe)
-//https://codeforces.com/contest/1916/problem/A
-
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -30,40 +28,27 @@ int gcd(int a, int b) { if(a % b == 0) return b; else return gcd(b, a % b); }
 int lcm(int a, int b) { return (a * b) / gcd(a, b); }
 
 void sr_sol() {
-    int t;
-    cin >> t;
-
-    while (t--) 
+    
+    int n;
+    cin >>n;
+    int x=0;
+    
+    while(n--)
     {
+         string s;
+         cin >>s;
 
-        ll n, k;
-        cin>>n>>k;
-        
-        ll total=1;
+         if(s[0]=='+' || s[1]=='+')
+         {
+            x+=1;
+         }
+         else
+         {
+            x-=1;
+         }
+    }
 
-        for(int i = 0; i < n; i++){
-            ll a;
-            cin >>a;
-            total*=a;
-        }
-
-        if (2023 % total== 0)
-        {
-
-            cout<<"YES"<<N;
-            cout<< 2023/total <<" ";
-
-            for(int i = 1; i <= k - 1; i++)
-            {
-                cout<<1<<" ";
-            }
-            cout<<N;
-
-        }
-        else{
-            cout<<"NO"<<endl;
-        }
-   }
+    cout<<x<<N;
 }
 
 int32_t main() {

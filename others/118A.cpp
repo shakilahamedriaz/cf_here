@@ -1,5 +1,5 @@
 //author:Shakil Ahamed Riaz-(shakilswe)
-//https://codeforces.com/contest/1916/problem/A
+//https://codeforces.com/problemset/problem/118/A
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -29,42 +29,35 @@ using namespace std;
 int gcd(int a, int b) { if(a % b == 0) return b; else return gcd(b, a % b); }
 int lcm(int a, int b) { return (a * b) / gcd(a, b); }
 
-void sr_sol() {
-    int t;
-    cin >> t;
 
-    while (t--) 
-    {
+bool isvowel(char c) {
 
-        ll n, k;
-        cin>>n>>k;
-        
-        ll total=1;
-
-        for(int i = 0; i < n; i++){
-            ll a;
-            cin >>a;
-            total*=a;
-        }
-
-        if (2023 % total== 0)
-        {
-
-            cout<<"YES"<<N;
-            cout<< 2023/total <<" ";
-
-            for(int i = 1; i <= k - 1; i++)
-            {
-                cout<<1<<" ";
-            }
-            cout<<N;
-
-        }
-        else{
-            cout<<"NO"<<endl;
-        }
-   }
+    return (c == 'A' || c == 'O' || c == 'Y' || c == 'E' || c == 'U' || c == 'I'
+            || c == 'a' || c == 'o' || c == 'y' || c == 'e' || c == 'u' || c == 'i');
 }
+
+void sr_sol() {
+
+    string s;
+    cin >> s;
+
+    string str = "";
+
+    for (int i = 0; i < s.size(); i++) {
+        if (s[i] >= 'A' && s[i] <= 'Z') {
+            s[i] = s[i] + 32;
+        }
+
+        if (!isvowel(s[i])) {
+            str += '.';
+            str += s[i];
+        }
+    }
+
+     cout << str <<N;
+}
+
+  
 
 int32_t main() {
 
