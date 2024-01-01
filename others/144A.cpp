@@ -1,5 +1,6 @@
 //author:Shakil Ahamed Riaz-(shakilswe)
-//https://codeforces.com/problemset/problem/58/A
+//https://codeforces.com/problemset/problem/144/A
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -30,24 +31,30 @@ int lcm(int a, int b) { return (a * b) / gcd(a, b); }
 
 void sr_sol()
 {
-   string s;
-   cin>>s;
+    ll n;
+    cin >> n;
+    ll arr[n];
+    ll mx=0, mn=101, maxi,mini;
 
-   string k="hello";
-   int p=0, q=0;
+    for (int i = 0; i < n; i++)
+    {
+       cin >> arr[i];
+       
+       if(arr[i] > mx)
+       {
+           mx=arr[i];
+           maxi=i;
+       }
+
+       if(arr[i]<=mn)
+       {
+           mn=arr[i];
+           mini=i;
+       }
+    }
     
-   for(int i=0; i<s.size(); i++)
-   {
-      if(s[i] == k[p])
-      {
-        p++;
-        q++;
-      }
-
-   } 
-   
-   if(q ==5 ? cout<< "YES"<<N : cout<< "NO"<<N);
-     
+    if(maxi > mini) mini+=1;
+    cout<< maxi + (n-1) - mini <<N;
 }
 
 int32_t main() {
