@@ -29,13 +29,37 @@ int lcm(int a, int b) { return (a * b) / gcd(a, b); }
 
 void sr_sol()
 {
-    
-    int t;
-    cin >>t;
-    while(t--)
+    int n,m;
+    cin >>n>>m;
+
+    int arr[n][m];
+
+    for(int i=0; i<n; i++)
     {
-         //play form here
+        for(int j=0; j<n; j++)
+        {
+           cin >>arr[i][j];
+        }
     }
+    
+    int a=0;
+     for(int i=0; i<n; i++)
+    {   int cnt=0;
+        for(int j=0; j<n; j++)
+        {
+           if(arr[i][j] == arr[i][j+1]) cnt++;
+        }
+
+        if(cnt==3)
+        {
+            a++;
+        }
+        cnt=0;
+    }
+
+    if(a==3) cout<< "YES"<<N;
+    else cout<< "NO"<<N;
+
 }
 
 int32_t main() {

@@ -42,12 +42,12 @@ void sr_sol()
         if(n-x==0)break;
         if(m-x==0)break;
 
-        x+;
+        x++;
         cnt++;
      }
     
      if(cnt%2==0 ? cout<< "Akshat"<<N : cout<< "Malvika"<<N);
-     
+
 }
 
 int32_t main() {

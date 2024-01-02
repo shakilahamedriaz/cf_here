@@ -45,7 +45,7 @@ void sr_sol()
 
   int ans=max(aa,max(bb,max(cc,max(dd,max(ee,max(ff,gg))))));
 
-  cout<<ans<<endl;
+  cout<<ans<<N;
 
 }
 

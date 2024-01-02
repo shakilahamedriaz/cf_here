@@ -1,0 +1,1 @@
+{"name":"Local: 22A","url":"e:\\Competative Progtamming\\cf_here\\others\\22A.cpp","tests":[{"id":1704232741589,"input":"4\n1 2 2 -4","output":"1"},{"id":1704233366701,"input":"5\n1 2 3 1 1","output":"2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Competative Progtamming\\cf_here\\others\\22A.cpp","group":"local","local":true}

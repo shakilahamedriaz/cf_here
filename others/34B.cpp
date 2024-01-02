@@ -1,4 +1,6 @@
 //author:Shakil Ahamed Riaz-(shakilswe)
+//https://codeforces.com/problemset/problem/34/B
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -29,13 +31,25 @@ int lcm(int a, int b) { return (a * b) / gcd(a, b); }
 
 void sr_sol()
 {
-    
-    int t;
-    cin >>t;
-    while(t--)
+    int n,m;
+    cin >>n>>m;
+
+    int arr[n];
+    for(int i=0; i<n; i++)
     {
-         //play form here
+        cin >>arr[i];
     }
+
+    sort(arr, arr+n);
+    int sum=0;
+    for(int i=0; i<m; i++)
+    {
+        if(arr[i]>=0) break;
+        sum+=arr[i];
+    }
+
+    cout<<-sum<<N;
+ 
 }
 
 int32_t main() {

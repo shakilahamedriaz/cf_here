@@ -1,4 +1,6 @@
 //author:Shakil Ahamed Riaz-(shakilswe)
+//https://codeforces.com/problemset/problem/1328/A
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -42,11 +44,11 @@ void sr_sol() {
         }
         else
         {
-        temp=a/b;
-        //first=a-(temp*b);
-        second=((temp+1)*b)-a;
 
+        temp=a/b;
+        second=((temp+1)*b)-a;
         cout<<second<<N;
+
         }
     }
 }

@@ -30,13 +30,34 @@ int lcm(int a, int b) { return (a * b) / gcd(a, b); }
 void sr_sol()
 {
     
-    int t;
-    cin >>t;
-    while(t--)
+    int n;
+    cin>>n;
+    vector<int>arr(n);
+ 
+    for(int i=0; i<n; i++) 
     {
-         //play form here
+        cin >>arr[i];
+       
     }
-}
+      sort(arr.begin(),arr.end());
+      set<int>st;
+
+      for(int i=0; i<n; i++)
+      {
+       st.insert(arr[i]);
+      }
+     
+      if(st.size()==1) 
+      {
+        cout<< "NO" <<N;
+      }
+
+      else
+      {
+        auto it= next(st.begin(), 1);
+        cout<< *it <<N;
+      }
+    }
 
 int32_t main() {
 

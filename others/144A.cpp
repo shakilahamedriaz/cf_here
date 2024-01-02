@@ -13,7 +13,7 @@ using namespace std;
 #define ar array
 #define sza(x) ((int)x.size())
 #define all(a) (a).begin(), (a).end()
-#define PI 3.1415926535897932384626433832795l
+#define PI 3.1415926535897932384626433832795
 #define pb(e) push_back(e)
 #define fst first
 #define snd second
