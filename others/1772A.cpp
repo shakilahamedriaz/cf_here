@@ -26,7 +26,6 @@ using namespace std;
 
 int gcd(int a, int b) { if(a % b == 0) return b; else return gcd(b, a % b); }
 int lcm(int a, int b) { return (a * b) / gcd(a, b); }
-
 struct Runtime {
     clock_t start;
     Runtime() {
@@ -43,27 +42,12 @@ void sr_sol()
     int t;
     cin >>t;
     while(t--)
-    {    
-         int n;
-         cin >>n;
-         string s;
-         cin>>s;
+    {
+         int a,b;
+         char ch;
+         cin>>a>>ch>>b;
 
-         string t="Timru";
-         sort(s.begin(), s.end());
-        
-        if(n==5)
-        {
-            sort(s.begin(), s.end());
-
-            if(t==s) cout<< "YES"<<N;
-            else cout<< "NO"<<N;
-        }
-        else
-        {
-            cout<< "NO"<<N;
-        }
-
+         cout<<a+b<<N;
     }
 }
 
@@ -74,7 +58,6 @@ int32_t main() {
     
     //sr_sol(): shakil_riaz's solution  
     sr_sol();
-    Runtime();
-
+    
     return 0;
 }
