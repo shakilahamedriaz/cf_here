@@ -27,44 +27,32 @@ using namespace std;
 int gcd(int a, int b) { if(a % b == 0) return b; else return gcd(b, a % b); }
 int lcm(int a, int b) { return (a * b) / gcd(a, b); }
 
-struct Runtime {
-    clock_t start;
-    Runtime() {
-        start = clock();
-    }
-    ~Runtime() {
-        cout << "Runtime: " << fixed << setprecision(3) << (double) (clock() - start) / CLOCKS_PER_SEC << "s\n";
-    }
-};
-
 void sr_sol()
 {
     
-    int t;
-    cin >>t;
-    while(t--)
-    {    
-         int n;
-         cin >>n;
-         string s;
-         cin>>s;
+   
+        string s;
+        cin >>s;
 
-         string t="Timru";
-         sort(s.begin(), s.end());
-        
-        if(n==5)
-        {
-            sort(s.begin(), s.end());
+        ll Ncnt=0, Icnt=0, Ecnt=0, Tcnt=0; //nineteen, -->nnn, i, eee, t
 
-            if(t==s) cout<< "YES"<<N;
-            else cout<< "NO"<<N;
-        }
-        else
+        for (int i = 0; i < s.size(); i++)
         {
-            cout<< "NO"<<N;
+           if(s[i]=='n') Ncnt++;
+           else if(s[i]=='i') Icnt++;
+           else if(s[i]=='e') Ecnt++;
+           else if(s[i] == 't') Tcnt++;
         }
 
-    }
+        Ncnt= Ncnt/3;
+        Icnt= Icnt/1;
+        Ecnt= Ecnt/3;
+        Tcnt= Tcnt/1;
+
+        int Total= min(Ncnt,min(Icnt,min(Ecnt,Tcnt)));
+
+        cout<<Total<<N;
+    
 }
 
 int32_t main() {
@@ -74,7 +62,6 @@ int32_t main() {
     
     //sr_sol(): shakil_riaz's solution  
     sr_sol();
-    Runtime();
 
     return 0;
 }
