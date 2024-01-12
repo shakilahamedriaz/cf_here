@@ -1,4 +1,6 @@
 //author:Shakil Ahamed Riaz-(shakilswe)
+//https://codeforces.com/contest/1903/problem/A
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -47,7 +49,7 @@ void sr_sol()
         
         bool isSorted=true;
 
-        for(int i=0; i<n; i++)
+        for(int i=0; i<n-1; i++)
         {
             if(arr[i] > arr[i+1])
             {
@@ -58,6 +60,7 @@ void sr_sol()
         if(k>=2) cout<< "YES"<<N;
         else
         {
+            
             if(isSorted)
             {
                 cout<< "YES"<<N;
