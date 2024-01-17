@@ -1,4 +1,5 @@
 //author:Shakil Ahamed Riaz-(shakilswe)
+//https://codeforces.com/problemset/problem/1878/A
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -43,7 +44,30 @@ void sr_sol()
     cin >>t;
     while(t--)
     {
-         //play form here
+         int n,k;
+         cin>> n>>k;
+
+         int arr[n];
+         bool found=false;
+         for(int t=0; t<n; t++)
+         {
+            cin >>arr[t];
+            if(arr[t]==k)
+            {
+                found=true;
+            
+            }
+         }
+
+         if(found)
+         {
+            cout<< "YES"<<N;
+         }
+         else
+         {
+            cout<< "NO"<<N;
+         }
+
     }
 }
 

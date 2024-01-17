@@ -1,4 +1,5 @@
 //author:Shakil Ahamed Riaz-(shakilswe)
+//https://codeforces.com/problemset/problem/1878/B
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -43,7 +44,20 @@ void sr_sol()
     cin >>t;
     while(t--)
     {
-         //play form here
+         ll n;
+         cin >>n;
+            
+         for(ll i=1; i<mod; i++)
+         {
+            if(i%2 != 0)
+            {
+                n--;
+                cout<< i << " ";
+            }
+
+            if(n == 0) break;
+         }
+         cout<<N;
     }
 }
 
