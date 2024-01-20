@@ -1,5 +1,5 @@
 //author:Shakil Ahamed Riaz-(shakilswe)
-//https://codeforces.com/problemset/problem/1878/A
+//https://codeforces.com/problemset/problem/25/A
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -40,34 +40,53 @@ struct Runtime {
 void sr_sol()
 {
     
-    int t;
-    cin >>t;
-    while(t--)
+    
+    int n;
+    cin >>n;
+
+    int arr[n];
+    int evcnt=0, oddcnt=0;
+
+    for(int i=1; i<=n; i++)
     {
-         int n,k;
-         cin>> n>>k;
-
-         int arr[n];
-         bool found=false;
-         for(int t=0; t<n; t++)
-         {
-            cin >>arr[t];
-            if(arr[t]==k)
-            {
-                found=true;
-            }
-         }
-
-         if(found)
-         {
-            cout<< "YES"<<N;
-         }
-         else
-         {
-            cout<< "NO"<<N;
-         }
-
+        cin >> arr[i];
+        if(arr[i]%2==0) evcnt++;
+        else oddcnt++;
     }
+
+    if(evcnt>oddcnt)
+    {   
+        int ans;
+        for(int i=1; i<=n; i++)
+        {
+            if(arr[i] %2 !=0)
+            {
+               ans = i;
+               break;
+            }
+        }
+
+        cout<<ans<<N;
+    }
+    else
+    {
+        int ans;
+        for(int i=1; i<=n; i++)
+        {
+            if(arr[i] %2 ==0)
+            {
+               ans = i;
+               break;
+            }
+        }
+
+        cout<<ans<<N;
+    }
+
+
+
+
+    
 }
 
 int32_t main() {

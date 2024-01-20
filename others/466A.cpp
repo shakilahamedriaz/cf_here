@@ -1,5 +1,6 @@
 //author:Shakil Ahamed Riaz-(shakilswe)
-//https://codeforces.com/problemset/problem/1878/A
+////author:Shakil Ahamed Riaz-(shakilswe)
+//https://codeforces.com/problemset/problem/25/A
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -40,34 +41,27 @@ struct Runtime {
 void sr_sol()
 {
     
-    int t;
-    cin >>t;
-    while(t--)
+    int n,m,a,b;
+    cin >>n>>m>>a>>b;
+
+    if(m*a>b)
     {
-         int n,k;
-         cin>> n>>k;
-
-         int arr[n];
-         bool found=false;
-         for(int t=0; t<n; t++)
-         {
-            cin >>arr[t];
-            if(arr[t]==k)
-            {
-                found=true;
-            }
-         }
-
-         if(found)
-         {
-            cout<< "YES"<<N;
-         }
-         else
-         {
-            cout<< "NO"<<N;
-         }
-
+        ll p=(n%m)*a;
+        if(p>b)
+        {
+            cout<< n/m*b + b;
+        }
+        else
+        {
+            cout<<n/m*b + p;
+        }
+    }  
+    else
+    {
+        cout<<n*a<<N;
     }
+
+    
 }
 
 int32_t main() {
@@ -80,3 +74,4 @@ int32_t main() {
     
     return 0;
 }
+
