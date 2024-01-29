@@ -1,4 +1,5 @@
 //author:Shakil Ahamed Riaz-(shakilswe)
+//https://codeforces.com/problemset/problem/404/A
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -38,7 +39,7 @@ struct Runtime {
 
 void sr_sol()
 {
-    
+    //cpy 
     int n;
     cin >> n;
     string s;

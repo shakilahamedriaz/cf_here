@@ -1,6 +1,6 @@
 //author:Shakil Ahamed Riaz-(shakilswe)
 ////author:Shakil Ahamed Riaz-(shakilswe)
-//https://codeforces.com/problemset/problem/25/A
+//https://codeforces.com/problemset/problem/466/A
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -41,7 +41,7 @@ struct Runtime {
 void sr_sol()
 {
     
-    int n,m,a,b;
+    ll n,m,a,b;
     cin >>n>>m>>a>>b;
 
     if(m*a>b)
@@ -61,7 +61,6 @@ void sr_sol()
         cout<<n*a<<N;
     }
 
-    
 }
 
 int32_t main() {

@@ -1,5 +1,5 @@
 //author:Shakil Ahamed Riaz-(shakilswe)
-//https://codeforces.com/problemset/problem/469/A
+//https://codeforces.com/contest/1899/problem/A
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -40,26 +40,16 @@ struct Runtime {
 void sr_sol()
 {
     
-    int n, p, q;
-    cin >>n>>p;
-
-    int arr[450];
-    
-    for(int i=0; i<p; i++)
+    int t;
+    cin >>t;
+    while(t--)
     {
-        cin >> arr[i];
+        int n;
+        cin >>n;
+
+        if(n%3==0) cout<< "Second"<<N;
+        else cout<< "First"<<N;
     }
-    cin >>q;
-
-    for(int i=p; i<p+q; i++)
-    {
-        cin >>arr[i];
-    }
-
-    set<int>st(arr, arr+(p+q));
-
-   if(n == st.size()) cout<< "I become the guy."<<N;
-   else cout<< "Oh, my keyboard!"<<N;    
 }
 
 int32_t main() {
