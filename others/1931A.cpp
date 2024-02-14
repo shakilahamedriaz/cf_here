@@ -45,34 +45,28 @@ void sr_sol()
     {
          int n;
          cin >>n;
-
-         string str;
-         cin >>str;
-
-         for(int i=0; i<n; i++)
-         {
-            if(str[i]=='b' || str[i]=='c' || str[i]=='d')
-            {
-                cout<<str[i];
-            }
-            else 
-            {
-                cout<<str[i];
-                if(str[i+1]=='b' || str[i+1]=='c' || str[i+1]=='d')
-                {
-                    if(str[i+2]!='a' && str[i+2] != 'e')
-                    {
-                    cout<< str[i+1];
-                    i+=1;
-                    }
-                }
-                  if(i!= n-1)
-                  cout<< '.';
          
-            }
-         }
+         
+         if(n%3==0)
+         {
+            int k=n/3;
+            
+            char c='a'+(k-1);
+            cout<< c<<c<<c<<N;
 
-         cout<<N;
+         }
+         else if(n%3==1)
+         {
+            int k=n/3;
+            char c='a'+(k-1);
+            cout<<c<<c;
+
+            int p=n-(k*2);
+            char d='a'+(p-1);
+            cout<<d<<N;
+
+         }
+       
     }
 }
 
