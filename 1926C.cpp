@@ -1,3 +1,4 @@
+
 //author:Shakil Ahamed Riaz-(shakilswe)
 #include <bits/stdc++.h>
 using namespace std;
@@ -21,11 +22,37 @@ using namespace std;
 #define sqr(a) (a)*(a)
 #define mod 1000000007
 #define N "\n"
+#define  bal //parina kichu
 
 using namespace std;
 
 int gcd(int a, int b) { if(a % b == 0) return b; else return gcd(b, a % b); }
 int lcm(int a, int b) { return (a * b) / gcd(a, b); }
+
+struct Runtime {
+    clock_t start;
+    Runtime() {
+        start = clock();
+    }
+    ~Runtime() {
+        cout << "Runtime: " << fixed << setprecision(3) << (double) (clock() - start) / CLOCKS_PER_SEC << "s\n";
+    }
+};
+
+
+int sum_All(int num)
+{
+    int sum = 0;
+    int zero=0;
+    while (num > zero)
+    {
+        sum += num % 10;
+        num /= 10;
+    }
+
+    return sum;
+}
+
 
 void sr_sol() {
     
@@ -33,32 +60,21 @@ void sr_sol() {
     cin >>t;
     while(t--)
     {
-         string s;
-         cin>>s;
+        int n;
+        cin >> n;
 
-         int cntA=0, cntB=0;
-         
-         for(int i=0; i<s.size(); i++)
-         {
-            if(s[i]=='A')
-            {
-                cntA++;
-            }
-            else{
-                cntB++;
-            }
-         }
+        ll total=0;
 
-         if(cntA>cntB)
-         {
-            cout<< "A"<<endl;
-         }
-         else
-         {
-            cout<<"B"<<endl;
-         }
+        for (int i = 1; i <= n; ++i)
+        {
+            total+=sum_All(i);
+        }
 
+
+        cout<<total<<N;
+        //Runtime();
     }
+    
 }
 
 int32_t main() {
