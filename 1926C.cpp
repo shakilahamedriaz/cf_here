@@ -40,11 +40,13 @@ struct Runtime {
 };
 
 
-int sum_All(int num)
+//precompute
+vector<ll> vr(200005);
+
+int sum_of_digits(int num)  //only digits sum like 134=1+3+4=8
 {
     int sum = 0;
-    int zero=0;
-    while (num > zero)
+    while (num > 0)
     {
         sum += num % 10;
         num /= 10;
@@ -62,17 +64,14 @@ void sr_sol() {
     {
         int n;
         cin >> n;
-
-        ll total=0;
-
-        for (int i = 1; i <= n; ++i)
+  
+        for (ll i = 1; i <= n; ++i)
         {
-            total+=sum_All(i);
+            vr[i]=vr[i-1]+sum_of_digits(i);
         }
-
-
-        cout<<total<<N;
-        //Runtime();
+        
+        cout<<vr[n]<<N;
+   
     }
     
 }
