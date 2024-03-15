@@ -1,46 +1,70 @@
-#include <iostream>
-#include <vector>
+//author:Shakil Ahamed Riaz-(shakilswe)
+#include <bits/stdc++.h>
+using namespace std;
+
+//for optimizes GCC code
+#pragma GCC optimize("Ofast,unroll-loops")
+#pragma GCC target("avx,avx2,fma")
+
+#define ll long long
+#define ld long double
+#define ar array
+#define sza(x) ((int)x.size())
+#define all(a) (a).begin(), (a).end()
+#define PI 3.1415926535897932384626433832795l
+#define pb(e) push_back(e)
+#define fst first
+#define snd second
+#define pr pair<int, int>
+#define mp make_pair
+#define flp(i, a, b) for(int i = a; i <= b; i++)
+#define sqr(a) (a)*(a)
+#define mod 1000000007
+#define N "\n"
 
 using namespace std;
 
-int main() {
-    int t;
-    cin >> t;
-
-    while (t--) {
-        int n;
-        cin >> n;
-
-        vector<int> containers(n);
-        long long sum = 0;
-
-        for (int i = 0; i < n; i++) {
-            cin >> containers[i];
-            sum += containers[i];
-        }
-
-        // Check if the sum is divisible by n
-        if (sum % n != 0) {
-            cout << "NO" << endl;
-            continue;
-        }
-
-        // Calculate the target amount each container should have
-        long long target = sum / n;
-
-        // Iterate over containers and check if each container can be made equal to the target
-        bool possible = true;
-        long long prefix_sum = 0;
-        for (int i = 0; i < n; i++) {
-            prefix_sum += containers[i];
-            if (prefix_sum % (i + 1) != 0 || prefix_sum / (i + 1) != target) {
-                possible = false;
-                break;
-            }
-        }
-
-        cout << (possible ? "YES" : "NO") << endl;
+int gcd(int a, int b) { if(a % b == 0) return b; else return gcd(b, a % b); }
+int lcm(int a, int b) { return (a * b) / gcd(a, b); }
+struct Runtime {
+    clock_t start;
+    Runtime() {
+        start = clock();
     }
+    ~Runtime() {
+        cout << "Runtime: " << fixed << setprecision(3) << (double) (clock() - start) / CLOCKS_PER_SEC << "s\n";
+    }
+};
 
+void sr_sol()
+{
+    int t;
+    cin >>t;
+    
+    while(t--)
+    {
+         ll n;
+         cin >>n;
+
+         ll arr[n];
+         for(int i=0; i<n; i++)
+         {
+             cin >>arr[i];
+         }
+
+            sort(arr, arr+n);
+            
+    }
+ 
+}
+
+int32_t main() {
+
+    ios_base::sync_with_stdio(0);
+    cin.tie(0); cout.tie(0);
+    
+    //sr_sol(): shakil_riaz's solution  
+    sr_sol();
+    
     return 0;
 }

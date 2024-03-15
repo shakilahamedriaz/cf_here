@@ -1,5 +1,4 @@
 //author:Shakil Ahamed Riaz-(shakilswe)
-//https://codeforces.com/contest/1850/problem/B
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -27,6 +26,7 @@ using namespace std;
 
 int gcd(int a, int b) { if(a % b == 0) return b; else return gcd(b, a % b); }
 int lcm(int a, int b) { return (a * b) / gcd(a, b); }
+
 struct Runtime {
     clock_t start;
     Runtime() {
@@ -37,36 +37,47 @@ struct Runtime {
     }
 };
 
-void sr_sol()
-{
+void sr_sol() {
     
     int t;
     cin >>t;
     while(t--)
     {
-         int n;
-         cin>>n;
-        
-        int m=0, ans;
-         for(int i=0; i<n; i++)
-         {
-            int a,b;
-            cin >>a>>b;
+        ll n;
+        cin >>n;
 
-            if(a < 11)
-            {
+        ll arr[n];
 
-            if(b>m)
-            {
-               m=b;
-               ans=i+1;
-            }
-            }
-         }
-         cout<<ans<<N;
-    }
+        set<int>st;
+        for(int i=0; i<n; i++)
+        {
+            cin >>arr[i];
+            st.insert(arr[i]);
+        }
+
+
+        if(st.size()==1)
+        {
+            cout<< "0"<<N;
+        }
+
+        else
+        {
+           sort(arr, arr+n);
+
+             int a=arr[0]-arr[n-1];
+             int b=arr[0]-arr[n-2];
+             int c=arr[1]-arr[n-2];
+             int d=arr[1]-arr[n-1];
+
+             int ans=abs(a+b+c+d);
+
+             cout<<ans<<N;
+        }
+
 
     
+    }
 }
 
 int32_t main() {
@@ -76,6 +87,6 @@ int32_t main() {
     
     //sr_sol(): shakil_riaz's solution  
     sr_sol();
-    
+
     return 0;
 }

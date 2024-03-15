@@ -1,5 +1,4 @@
 //author:Shakil Ahamed Riaz-(shakilswe)
-//https://codeforces.com/contest/1850/problem/B
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -27,6 +26,7 @@ using namespace std;
 
 int gcd(int a, int b) { if(a % b == 0) return b; else return gcd(b, a % b); }
 int lcm(int a, int b) { return (a * b) / gcd(a, b); }
+
 struct Runtime {
     clock_t start;
     Runtime() {
@@ -37,36 +37,25 @@ struct Runtime {
     }
 };
 
-void sr_sol()
-{
+void sr_sol() {
     
     int t;
     cin >>t;
     while(t--)
     {
-         int n;
-         cin>>n;
-        
-        int m=0, ans;
-         for(int i=0; i<n; i++)
-         {
-            int a,b;
-            cin >>a>>b;
+         int a, b, c;
+         cin >> a >>b >>c;
 
-            if(a < 11)
-            {
+        if(a+b==c)
+        {
+            cout<< "+" <<N;
+        }
+        else
+        {
+            cout<< "-"<<N;
+        }
 
-            if(b>m)
-            {
-               m=b;
-               ans=i+1;
-            }
-            }
-         }
-         cout<<ans<<N;
     }
-
-    
 }
 
 int32_t main() {
@@ -76,6 +65,6 @@ int32_t main() {
     
     //sr_sol(): shakil_riaz's solution  
     sr_sol();
-    
+
     return 0;
 }

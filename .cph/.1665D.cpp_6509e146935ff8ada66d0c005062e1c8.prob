@@ -1,0 +1,1 @@
+{"name":"Local: 1665D","url":"e:\\Competative Progtamming\\cf_here\\1665D.cpp","tests":[{"id":1708713629241,"input":"2\n8\n8 2 12 6 4 24 16 3\n1\n2","output":"48\n4"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Competative Progtamming\\cf_here\\1665D.cpp","group":"local","local":true}

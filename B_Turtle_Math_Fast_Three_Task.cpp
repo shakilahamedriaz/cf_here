@@ -1,5 +1,4 @@
 //author:Shakil Ahamed Riaz-(shakilswe)
-//https://codeforces.com/contest/1850/problem/B
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -27,6 +26,7 @@ using namespace std;
 
 int gcd(int a, int b) { if(a % b == 0) return b; else return gcd(b, a % b); }
 int lcm(int a, int b) { return (a * b) / gcd(a, b); }
+
 struct Runtime {
     clock_t start;
     Runtime() {
@@ -37,38 +37,46 @@ struct Runtime {
     }
 };
 
-void sr_sol()
-{
-    
+void sr_sol() {
     int t;
-    cin >>t;
-    while(t--)
+    cin >> t;
+
+    while (t--) 
     {
-         int n;
-         cin>>n;
-        
-        int m=0, ans;
-         for(int i=0; i<n; i++)
-         {
-            int a,b;
-            cin >>a>>b;
+        ll n;
+        cin >> n;
 
-            if(a < 11)
-            {
+        vector<ll> arr(n);
+        ll sum = 0;
 
-            if(b>m)
-            {
-               m=b;
-               ans=i+1;
+        map<int, int> mp;
+        bool ok = false;
+
+        for (int i =0; i <n; i++)
+        {
+            cin >> arr[i];
+            mp[arr[i] % 3]++;
+            sum += arr[i];
+
+            if (arr[i] % 3 == 1) {
+               ok = true;
             }
-            }
-         }
-         cout<<ans<<N;
+        }
+
+        if (sum % 3 == 0)
+        {
+            cout << "0" << endl;
+        } 
+        else if (sum % 3 == 2 || ok) 
+        {
+            cout << "1" << endl;
+        }
+        else 
+        {
+            cout << "2" << endl;
+        }
     }
-
-    
 }
-
 int32_t main() {
 
     ios_base::sync_with_stdio(0);
@@ -76,6 +84,6 @@ int32_t main() {
     
     //sr_sol(): shakil_riaz's solution  
     sr_sol();
-    
+
     return 0;
 }

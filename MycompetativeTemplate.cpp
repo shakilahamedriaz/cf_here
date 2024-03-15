@@ -27,37 +27,45 @@ using namespace std;
 int gcd(int a, int b) { if(a % b == 0) return b; else return gcd(b, a % b); }
 int lcm(int a, int b) { return (a * b) / gcd(a, b); }
 
+struct Runtime {
+    clock_t start;
+    Runtime() {
+        start = clock();
+    }
+    ~Runtime() {
+        cout << "Runtime: " << fixed << setprecision(3) << (double) (clock() - start) / CLOCKS_PER_SEC << "s\n";
+    }
+};
+
 void sr_sol() {
     
     int t;
     cin >>t;
     while(t--)
     {
-         string s;
-         cin>>s;
+        int n;
+        cin >>n;
+        int arr[n];
 
-         int cntA=0, cntB=0;
-         
-         for(int i=0; i<s.size(); i++)
-         {
-            if(s[i]=='A')
+        for(int i=0; i<n; i++)
+        {
+            cin >>arr[i];
+        }
+
+        int sum=0;
+        for(int i=0; i<n; i++)
+        {
+            if(arr[i]<0)
             {
-                cntA++;
+                sum+=arr[i]*-1;
             }
-            else{
-                cntB++;
+            else
+            {
+                sum+=arr[i];
             }
-         }
-
-         if(cntA>cntB)
-         {
-            cout<< "A"<<endl;
-         }
-         else
-         {
-            cout<<"B"<<endl;
-         }
-
+        }
+      
+        cout<<sum<<endl;
     }
 }
 
