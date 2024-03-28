@@ -43,7 +43,21 @@ void sr_sol() {
     cin >>t;
     while(t--)
     {
+       int a, b, c;
+       cin >>a>>b>>c;
 
+       if(a<b && b<c)
+       {
+         cout<< "STAIR"<<N;
+       }
+       else if(b>a && b>c)
+       {
+            cout<< "PEAK"<<N;
+        }
+        else
+        {
+            cout<< "NONE"<<N;
+       }
 
     }
 }

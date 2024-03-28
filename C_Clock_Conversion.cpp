@@ -1,4 +1,5 @@
 //author:Shakil Ahamed Riaz-(shakilswe)
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -38,15 +39,26 @@ struct Runtime {
 };
 
 void sr_sol() {
-    
     int t;
-    cin >>t;
-    while(t--)
+    cin >> t;
+    while (t--) 
     {
-
-
+        string s;
+        cin >> s;
+        
+        int h = stoi(s.substr(0, 2));
+        bool pm = h >= 12;
+        
+        if (h == 0 || h == 12) { // for 12:00 AM and 12:00 PM
+            h = 12;
+        } else {
+            h %= 12;
+        }
+        
+        cout << setw(2) << setfill('0') << h << s.substr(2) << (pm ? " PM" : " AM") <<N;
     }
 }
+
 
 int32_t main() {
 

@@ -37,13 +37,58 @@ struct Runtime {
     }
 };
 
+void makehash()
+{
+    for(int i=1; i<=2; i++)
+    {
+        for(int j=1; j<=2; j++)
+        {
+            cout<< "#";
+        }
+        cout<<N;
+    }
+    
+}
+
+void makedot()
+{
+    for(int i=1; i<=2; i++)
+    {
+        for(int j=1; j<=2; j++)
+        {
+            cout<< ".";
+        }
+        cout<<N;
+    }
+    
+}
+
 void sr_sol() {
     
     int t;
     cin >>t;
     while(t--)
     {
+       int n;
+       cin >>n;
 
+
+       for(int i=1; i<=n; i++)
+       {
+          for(int j=1; j<=n; j++)
+          {
+                 if((i+j)%2==0)
+                 {
+                     makehash();
+                 }
+                 else
+                 {
+                     makedot();
+                 }
+          }
+
+          
+       }
 
     }
 }
