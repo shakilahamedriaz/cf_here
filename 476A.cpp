@@ -19,7 +19,7 @@ using namespace std;
 #define mp make_pair
 #define flp(i, a, b) for(int i = a; i <= b; i++)
 #define sqr(a) (a)*(a)
-#define mod 1000000007
+#define mod 10000000070
 #define N "\n"
 
 using namespace std;
