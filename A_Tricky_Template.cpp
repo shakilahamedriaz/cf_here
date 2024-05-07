@@ -27,39 +27,30 @@ struct Runtime
 
 void shakil_sol() 
 {
-    
     int t;
     cin >>t;
+
     while(t--)
     {
+    int n;
+    cin >>n;
 
-        string st=  "abcdefghijklmnopqrstuvwxyz";
-        ll n;
-        cin >>n;
-        map<char, int > mp;
-        for(int i=0; i<st.size(); i++)
+    string a, b, c;
+    cin >> a >> b >> c;
+
+    bool flag = false;
+
+    for(int i=0; i<n; i++)
+    {
+        if(a[i] != c[i] && b[i] != c[i])
         {
-            mp[st[i]]= 0;
+            flag = true;
+            break;
         }
+    }
 
-        ll arr[n];
-        for(int i=0; i<n; i++)
-        { 
-
-        cin >>arr[i];
-        for(auto it: mp)
-        {
-            if(it.second == arr[i])
-            {
-                cout<<it.first;
-                mp[it.first]++;
-                break;
-            }
-        }
-     }
-
-        cout<<endl;
-       
+    if(flag) cout<< "YES" << endl;
+    else cout << "NO" << endl;
     }
 }
 
