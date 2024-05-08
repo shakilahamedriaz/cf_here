@@ -27,30 +27,22 @@ struct Runtime
 
 void shakil_sol() 
 {
-    
     int t;
     cin >>t;
     while(t--)
     {
-      ll x, n;
-      cin >>x >>n;
+      int x, n;   cin >>x >>n;
+      int answer=0;
 
-      ll answer=0;
-      for(ll i=1; i<=x; i++)
+      for(int i=1; i*i<=x; i++)
       {
-         if(x/i >=n && x%i==0) 
-         {
-            answer=i;
-         }
-         if(x/i<n)
-         {
-            break;
-         }
+         if(x/i>=n && x%i == 0) answer=i;
+         if(x/i < n) break;
       }
-     cout <<answer <<endl;
-    }
-}
 
+      cout <<answer <<endl;
+   }
+}
 
 int32_t main() {
 
