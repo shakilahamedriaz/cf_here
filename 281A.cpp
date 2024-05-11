@@ -27,19 +27,9 @@ struct Runtime
 
 void shakil_sol()
 {
-    
-    int t;
-    cin >>t;
-    int cnt=0;
-    int a,b,c;
-
-    while(t--)
-    {
-        cin >>a >> b >> c;
-        if(a+b+c >= 2) cnt++;
-    }
-
-    cout<<cnt<<endl;
+       string s; cin >> s;
+       s[0] = toupper(s[0]);
+       cout << s << endl;
 }
 int32_t main() {
 
