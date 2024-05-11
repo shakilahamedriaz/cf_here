@@ -27,34 +27,35 @@ struct Runtime
 
 void shakil_sol() 
 {
+    
    int t; cin >>t;
    while(t--)
    { 
-      string s;
-      cin >>s;
-      string k=s;
+      string s; cin >>s;
+      int len= s.size();
+      int cnt=1, t=0;
 
-      sort(s.begin(), s.end());
-      if(s==k) cout<< "1"<<endl;
-      else if(s.size()==2  &&  (s[0]=='0' && s[1]=='1') || (s[0]=='1' && s[1]=='0'))
+      for(int i=1; i<s.size(); i++)
       {
-        cout<< "2" <<endl;
-      }
-      else
-      { 
-          int cnt=0;
-          for(int i=0; i<s.size()-1; i++)
-          {
-             if(s[i]=='0' && s[i+1] =='1') cnt++;
-          }
-
-           cout<< s.size() - cnt<<endl;
+         if(s[i-1] == s[i])
+         {
+            continue;
+         }
+         else
+         {
+            cnt++;
          }
 
-         
+         if(s[i-1]=='0' && s[i]== '1')
+         {
+             t=1;
+         }
       }
 
+      cout<<cnt-t <<endl;
+      
    }
+ }
 
 int32_t main() {
 
