@@ -27,26 +27,32 @@ void shakil_sol()
     cin >>t;
     while(t--)
     {
-               int n;
-               cin >> n;
-               int arr[n];
-               for(int i = 0; i < n; i++)
-               {
-                     cin >> arr[i];
-                     
-               }
+              ll a , b, c;
+              cin >> a >> b >> c;
+              ll ans = a;
+              ll r = b%3;
 
-                     sort(arr, arr + n);
-                     int ans = arr[0] + 1;
-                     for(int i = 1; i < n; i++)
-                     {           
-                              ans *= arr[i];
-                         
-                     }
-                              
-                              cout<< ans << "\n";
-             
+              if(r == 0)
+              {
+                        ans += b/3;
+                        if(c%3 == 0) ans += c/3;
+                        else ans += c/3+1;
+                        cout<< ans << "\n";
+
+              }
+
+              else if(c >= 3-r)
+              {
+                        b += (3-r);
+                        c -= (3-r);
+                        ans += b/3;
+                        if(c%3 == 0) ans += c/3;
+                        else ans += c/3+1;
+                        cout<< ans << "\n";
+              }
+              else cout<< "-1" << "\n";
     }
+
 }
 
 
