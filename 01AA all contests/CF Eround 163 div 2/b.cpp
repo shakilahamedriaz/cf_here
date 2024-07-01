@@ -34,7 +34,8 @@ void shakil_sol()
             cin >> arr[i];
             s+= to_string(arr[i]);
         }
-        
+
+
         bool check = true;
         for(int i = 0; i < s.size() - 1; i++)
         {

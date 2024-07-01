@@ -1,44 +1,49 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
-#pragma GCC optimize("Ofast,unroll-loops")
-#pragma GCC target("avx,avx2,fma")
-#define ll long long
-#define ld long double
-#define PI 3.1415926535897932384626433832795
+class Solution {
+public:
+    int romanToInt(string s) {
+        
+        unordered_map<char, int> mp = {
+        {'I', 1},
+        {'V', 5},
+        {'X', 10},
+        {'L', 50},
+        {'C', 100},
+        {'D', 500},
+        {'M', 1000}
+    };
+        
+        int len = s.size();
+        int ans = mp[s[len-1]];
 
-int gcd(int a, int b) { if(a % b == 0) return b; else return gcd(b, a % b); }
-int lcm(int a, int b) { return (a * b) / gcd(a, b); }
+        for(int i = len-2; i >=0; i--)
+        {
+            if(mp[s[i]] < mp[s[i+1]])
+            {
+                ans -= mp[s[i]];
+            }
+            else
+            {
+                ans += mp[s[i]];
+            }
+        }
 
-struct Runtime {
-    clock_t start;
-    Runtime() {
-        start = clock();
-    }
-    ~Runtime() {
-        cout << "Runtime: " << fixed << setprecision(3) << (double) (clock() - start) / CLOCKS_PER_SEC << "s\n";
+        return ans;
     }
 };
 
-void shakil_sol() 
-{
-    ll tc;
-    cin >> tc;
-    while (tc--)
-    {
-          string s = "1234";
-          //print the asci value of s[0], s[1] and all
-            cout<< s[0] << " " << s[1] << " " << s[2] << " " << s[3] << '\n';
+/*
+Initialization:
+............................................
+s = "MCMXCIV"
+len = s.size() = 7
+ans = mp[s[len-1]] = mp[s[6]] = mp['V'] = 5
 
-    }
-}
 
-int32_t main() 
-{
-    ios_base::sync_with_stdio(0);
-    cin.tie(0); cout.tie(0);
-
-    shakil_sol();
-
-    return 0;
-}
-
+First iteration:
+............................................
+i = len - 2 = 7 - 2 = 5
+s[i] = s[5] = 'I'
+s[i+1] = s[6] = 'V'
+*/
