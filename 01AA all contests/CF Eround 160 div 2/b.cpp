@@ -1,37 +1,69 @@
 #include <bits/stdc++.h>
 using namespace std;
+#pragma GCC optimize("Ofast,unroll-loops")
+#pragma GCC target("avx,avx2,fma")
+#define ll long long
+#define ld long double
+#define PI 3.1415926535897932384626433832795
 
-void solve() {
+int gcd(int a, int b) { if(a % b == 0) return b; else return gcd(b, a % b); }
+int lcm(int a, int b) { return (a * b) / gcd(a, b); }
+
+struct Runtime {
+    clock_t start;
+    Runtime() {
+        start = clock();
+    }
+    ~Runtime() {
+        cout << "Runtime: " << fixed << setprecision(3) << (double) (clock() - start) / CLOCKS_PER_SEC << "s\n";
+    }
+};
+
+void shakil_sol() 
+{
     int t;
     cin >> t;
-    while (t--) {
+    while( t-- )
+    {
         string s;
         cin >> s;
-        int n = s.length();
-        bool found = false;
-        
-        for (int i = 1; i < n; ++i) {
-            string a = s.substr(0, i);
-            string b = s.substr(i);
-            
-            // Check if neither part has a leading zero
-            if ((a[0] != '0' && b[0] != '0') && (stoll(a) > 0 && stoll(b) > 0)) {
-                if (stoll(a) < stoll(b)) {
-                    cout << a << " " << b << "\n";
-                    found = true;
-                    break;
-                }
+        int len = s.size();
+        int one = 0 , zero = 0;
+
+        for(int i = 0; i < len; i++)
+        {
+            if(s[i] == '1') one++;
+            else zero++;
+        }
+
+        for(int i = 0; i < len; i++)
+        {
+            if(s[i] == '1')
+            {
+                if(zero == 0)
+                break;
+                zero --;
+            }
+            else
+            {
+                if(one == 0)
+                break;
+                one --;
             }
         }
-        if (!found) {
-            cout << "-1\n";
-        }
+
+        int res = one + zero;
+        cout<< res << "\n";
     }
 }
 
-int main() {
-    ios_base::sync_with_stdio(false);
-    cin.tie(0);
-    solve();
+int32_t main() 
+{
+    ios_base::sync_with_stdio(0);
+    cin.tie(0); cout.tie(0);
+
+    shakil_sol();
+
     return 0;
 }
+
