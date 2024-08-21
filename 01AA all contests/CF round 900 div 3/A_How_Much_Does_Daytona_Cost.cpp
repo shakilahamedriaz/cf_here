@@ -31,26 +31,29 @@ void shakil_sol() {
     cin >> t;
     while(t--) 
     {
-       int n, m;
-       cin >> n >> m;
-
-       string x, s;
-       cin >> x >> s;
-
+       int n, k;
+       cin >> n >> k;
+       int a[n];
        bool check = false;
 
-       for(int i = 0; i < 10; i++)
+       for(int i = 0; i < n; i++)
        {
-         if(x.find(s) != string::npos)
-         {
-            check = true;
-            cout<< i << "\n";
-            break;
-         }
-          x += x;
+           cin >> a[i];
+           if(a[i] ==  k)
+           check = true;
        }
 
-         if(!check) cout<< -1 << "\n";
+       if(check)
+       {
+          cout<< "YES" << "\n";
+       }
+       else
+       {
+          cout<< "NO" << "\n";
+       }
+
+
+        
     
 
     }

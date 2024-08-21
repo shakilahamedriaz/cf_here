@@ -31,27 +31,26 @@ void shakil_sol() {
     cin >> t;
     while(t--) 
     {
-       int n, m;
-       cin >> n >> m;
+        int n;
+        cin >> n;
 
-       string x, s;
-       cin >> x >> s;
 
-       bool check = false;
+        int a[n];
+        unordered_map<int, int> mp;
+        for(int i = 0; i < n; i++)
+        {
+            cin >> a[i];
+            mp[a[i]]++;
+        }
 
-       for(int i = 0; i < 10; i++)
-       {
-         if(x.find(s) != string::npos)
-         {
-            check = true;
-            cout<< i << "\n";
-            break;
-         }
-          x += x;
-       }
+        int maxFrequency = 0;
+        for (auto it : mp) {
+            if (maxFrequency < it.second) {
+                maxFrequency = it.second;
+            }
+        }
 
-         if(!check) cout<< -1 << "\n";
-    
+        cout << n - maxFrequency << "\n";
 
     }
 }

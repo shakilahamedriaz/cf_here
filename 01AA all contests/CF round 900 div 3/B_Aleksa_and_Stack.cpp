@@ -31,27 +31,22 @@ void shakil_sol() {
     cin >> t;
     while(t--) 
     {
-       int n, m;
-       cin >> n >> m;
-
-       string x, s;
-       cin >> x >> s;
-
-       bool check = false;
-
-       for(int i = 0; i < 10; i++)
-       {
-         if(x.find(s) != string::npos)
+         
+         int n;
+         cin >> n;
+         
+         int cnt = 0;
+         for(int i = 7;  ; i++)
          {
-            check = true;
-            cout<< i << "\n";
-            break;
+            if(cnt == n) break;
+            
+            if(i % 2 == 1)
+            {   cnt ++;
+                cout<< i << " ";
+            }
+            
          }
-          x += x;
-       }
-
-         if(!check) cout<< -1 << "\n";
-    
+         cout << "\n";
 
     }
 }

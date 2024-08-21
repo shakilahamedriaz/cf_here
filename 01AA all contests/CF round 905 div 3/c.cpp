@@ -29,44 +29,32 @@ void shakil_sol()
     {
         int n, k;
         cin >> n >> k;
-        int arr[n];
-        int init = 1;
+        
+        int evencnt = 0;
+        int ans = INT_MAX;
 
         for(int i = 0; i < n; i++)
         {
-            cin >> arr[i];
-            init *= arr[i];
+            int x; cin >> x;
+            if(x % 2 == 0) evencnt++;
+            if(x % k == 0) ans = 0;
+
+            ans = min(ans, k - x % k);
+         
         }
-        
-        if(init % k == 0)
+
+        if( k == 4)
         {
-            cout << 0 << "\n";
-            continue;
+            if(evencnt >= 2) ans = 0;
+            else if(evencnt == 1) ans = min (ans, 1);
+            else ans = min(ans, 2);
         }
 
-                sort(arr, arr+n);
-
-                int x = arr[0];
-                
-                int proudct = 1;
-                for(int i = 1; i < n; i++)
-                {
-                    proudct *= arr[i];
-                }
-                
-                int cnt = 0;
-                while(1)
-                {
-                    x ++;
-                    cnt ++;
-                    int temp = proudct * x;
-                    if(temp % k == 0)
-                    {
-                        break;
-                    }
-                }
-
-                cout<< cnt << "\n";
+        cout << ans << endl;
+        
+        
+ 
+    
 
     }
 
