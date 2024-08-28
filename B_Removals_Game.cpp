@@ -62,7 +62,7 @@ void shakil_sol() {
 
         if(a == b)
         {
-            cout<< "Alice" << '\n';
+            cout<< "Bob" << '\n';
             continue;
         }
 
