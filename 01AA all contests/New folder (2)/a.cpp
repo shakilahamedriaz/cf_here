@@ -21,54 +21,41 @@ struct Runtime {
 
 void shakil_sol() 
 {
-  
-    ll n;
-    cin >> n;
-    ll arr[n];
-
-    for(ll i = 0; i < n; i++)
+    int t;
+    cin >> t;
+    while( t-- )
     {
-        cin >> arr[i];
-    }
-    vector<ll> ans;
-    ans.push_back(arr[0]); 
+         ll a, b, c;
+         cin >> a >> b >> c;
 
-    for(ll i = 1; i < n; i++)
-    {
-         if(arr[i-1] <= arr[i])
+         ld mid = (a + b) / 2.0;
+
+         ld temp = mid - (double)min(a, b);
+         
+         ld ans = temp / double(c);
+
+         int res = (int)ans;
+
+         if(res == ans)
          {
-            ans.push_back(arr[i]);
+             cout << res << '\n';
          }
          else
          {
-            ans.push_back(1);
-            ans.push_back(arr[i]);
+             cout << res + 1 << '\n';
          }
-    }
+    
 
-    cout << ans.size() << "\n";  
-    for(auto x : ans)
-    {
-        cout << x << " ";
     }
-    cout << "\n";
 
 }
-
-
 
 int32_t main() 
 {
     ios_base::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
 
-    int t;
-    cin >> t;
-    while(t--)
-    {
-        shakil_sol();
-    }
-   
+    shakil_sol();
 
     return 0;
 }

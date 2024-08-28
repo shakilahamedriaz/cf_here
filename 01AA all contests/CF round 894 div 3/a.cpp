@@ -21,23 +21,49 @@ struct Runtime {
 
 void shakil_sol() 
 {
-    int t;
-    cin >> t;
-    while( t-- )
-    {
+  
+      int n, m, it = 0;
+      cin >> n >> m;
+      string s[n], ans = "vika";
+      for(int i = 0; i < n; i++) cin >> s[i];
 
+    
+      for(int i = 0; i < m; i++)
+      {
+        for(int j = 0; j < n; j++)
+        {
+            if(s[j][i] == ans[it])
+            {
+                it++;
+                if(it == 4)
+                {
+                    cout<< "YES" << "\n";
+                    return;
+                }
+                break;
+            }
         
+         }
+    
+      }
+      cout<< "NO" << "\n";
 
-    }
+   }
 
-}
+
 
 int32_t main() 
 {
     ios_base::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
 
-    shakil_sol();
+    int t;
+    cin >> t;
+    while(t--)
+    {
+        shakil_sol();
+    }
+   
 
     return 0;
 }
