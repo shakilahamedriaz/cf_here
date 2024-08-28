@@ -21,42 +21,41 @@ struct Runtime {
 
 void shakil_sol() 
 {
-  
+
     ll n;
     cin >> n;
-    ll arr[n];
 
-    for(ll i = 0; i < n; i++)
+    vector<ll> v(n+1);
+    map<ll, ll> mp1, mp2;
+
+    for(ll i = 1; i<=n; i++)
     {
-        cin >> arr[i];
+        ll x;
+        cin >> x;
+        v[i] = x; 
+        
+        mp1[i] = x;  // i index e x er val rakhlam
+        mp2[x] = i;  // store the index of x, x er index rakhlam
     }
-    vector<ll> ans;
-    ans.push_back(arr[0]); 
-
-    for(ll i = 1; i < n; i++)
+    //5 4 3 2 1
+    //1 2 3 4 5
+    for(ll i = 1; i <= n; i++)
     {
-         if(arr[i-1] <= arr[i])
-         {
-            ans.push_back(arr[i]);
-         }
-         else
-         {
-             ans.push_back(1);
-            //ans.push_back(arr[i]);
-             ans.push_back(arr[i]);
-         }
+        ll t = v[i]; // t = 5
+        ll l = mp1[t]; // l = 1
+        ll u = mp2[l]; // u = 5
+
+        if(t != u)
+        {
+            cout<< "NO" << "\n";
+            return;
+        }
     }
 
-    cout << ans.size() << "\n";  
-    for(auto x : ans)
-    {
-        cout << x << " ";
-    }
-    cout << "\n";
+    cout<< "YES" << "\n";
 
+    
 }
-
-
 
 int32_t main() 
 {
@@ -70,7 +69,6 @@ int32_t main()
         shakil_sol();
     }
    
-
     return 0;
 }
 
