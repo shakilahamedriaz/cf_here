@@ -20,24 +20,25 @@ struct Runtime {
 };
 
 
-void is_correspondence(string s, vector<ll> v)
-{
-    vector<ll> con_int;
-    for(ll i = 0; i < s.size(); i++)
-    {
-        con_int.push_back(s[i] - '0');
-    } 
+// void is_correspondence(string s, vector<ll> v)
+// {
+//     vector<ll> con_int;
+//     for(ll i = 0; i < s.size(); i++)
+//     {
+//         con_int.push_back(s[i] - '0');
+//     } 
 
-    if(con_int == v)
-    {
-        cout << "YES" << "\n";
+//     if(con_int != v)
+//     {
+//         cout  << "NO" << "\n";
+//         continue;
        
-    }
-    else
-    {
-        cout << "NO" << "\n";
-    }
-}
+//     }
+//     else
+//     {
+//         cout << "NO" << "\n";
+//     }
+// }
 
 void shakil_sol() 
 {
@@ -50,21 +51,75 @@ void shakil_sol()
         cin >> x;
         v.push_back(x);
     }
-    cin >> m;
-   
 
+    cin >> m;
     while( m-- )
     {
         string s;
         cin >> s;
         
-        if(s.size() == n)
+        //1st condition
+        if(s.size() != n)
         {
-           is_correspondence(s, v);
+            cout << "NO" << "\n";
         }
         else
         {
-            cout<< "NO" << "\n";
+             //2nd condition
+            map<char, vector<ll>> mp;
+            for(ll i = 0; i < s.size(); i++)
+            {
+                mp[s[i]].push_back(i);
+            }
+
+            bool ok = true;
+            for(auto it: mp)
+            {
+                for(ll k = 0; k < it.second.size() - 1; k++)
+                {
+                    if(v[it.second[k]] != v[it.second[k+1]])
+                    {
+                        ok = false;
+                        break;
+                    }
+                }
+            }
+
+            if(!ok)
+            {
+                 cout << "NO" << "\n";
+                 continue;
+            }
+
+            //3rd condition
+            map<ll, vector<ll>> mp2;
+            for(ll i = 0; i < n; i++)
+            {
+                mp2[v[i]].push_back(i);
+            }
+
+            for(auto it: mp2)
+            {
+                for(int k = 0; k < it.second.size() - 1; k++)
+                {
+                    if(s[it.second[k]] != s[it.second[k+1]])
+                    {
+                        ok = false;
+                        break;
+                    }
+                }
+            }
+
+            if(!ok)
+            {
+                cout << "NO" << "\n";
+                
+            }
+            else
+            {
+                cout << "YES" << "\n";
+            }
+            
         }
     }
 }
