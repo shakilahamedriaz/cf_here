@@ -22,19 +22,22 @@ struct Runtime {
 
 void shakil_sol() 
 {
-    int x, y, k;
-    cin >> x >> y >> k;
-    int ans = 0;
+    int a, b;
+    cin >> a >> b;
 
-    ans += 2 * max((x+k-1)/k, (y+k-1)/k);
-
-    if((x+k-1)/k > (y+k-1)/k)
+    if((a + 2 * b) % 2 != 0)
     {
-        ans -- ;
+        cout<< "NO" << "\n";
+    }
+    else if(a == 0 && b % 2 != 0)
+    {
+        cout<< "NO" << "\n";
+    }
+    else
+    {
+        cout<< "YES" << "\n";
     }
 
-    cout << ans << "\n";
-    
 }
 
 int32_t main() 
