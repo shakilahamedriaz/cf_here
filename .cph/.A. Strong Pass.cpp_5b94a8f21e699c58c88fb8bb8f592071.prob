@@ -1,0 +1,1 @@
+{"name":"Local: A","url":"e:\\Competative Progtamming\\cf_here\\A. Strong Pass.cpp","tests":[{"id":1725809672503,"input":"4\na\naaa\nabb\npassword","output":"wa\naada\nabcb\npastsword"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Competative Progtamming\\cf_here\\A. Strong Pass.cpp","group":"local","local":true}
