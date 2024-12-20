@@ -22,22 +22,22 @@ struct Runtime {
 void shakil_sol() 
 {
 
-    ll n;
-    cin >> n;
-    ll arr[n+10];
-    ll add = 0;
-    for(ll i = 0; i <n; i++) 
-    {
-      cin >> arr[i];
-    }
-    
-    for(ll i = 0; i < n - 2 ; i++)
-    {
-      add += arr[i];
-    }
-    
-    ll a = arr[n-1] - (arr[n-2] - add);
-    cout << a << "\n";
+  ll n;
+  cin >> n;
+  ll arr[n+10];
+  ll add = 0;
+  for(ll i = 0; i <n; i++) 
+  {
+    cin >> arr[i];
+  }
+  
+  for(ll i = 0; i < n - 2 ; i++)
+  {
+    add += arr[i];
+  }
+  
+  ll a = arr[n-1] - (arr[n-2] - add);
+  cout << a << "\n";
 
 }
 
@@ -55,4 +55,3 @@ int32_t main()
    
     return 0;
 }
-

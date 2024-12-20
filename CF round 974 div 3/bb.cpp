@@ -15,21 +15,7 @@ int main() {
             cin >> a[i];
         }
 
-        int robinGold = 0;  // Robin starts with 0 gold
-        int giveCount = 0;  // Count of people Robin gives gold to
 
-        for (int i = 0; i < n; i++) {
-            if (a[i] >= k) {
-                // Robin takes all gold if it's >= k
-                robinGold += a[i];
-            } else if (a[i] == 0 && robinGold > 0) {
-                // Robin gives 1 gold if the person has 0 gold and Robin has gold to give
-                robinGold--;
-                giveCount++;
-            }
-        }
-
-        cout << giveCount << endl;
     }
 
     return 0;
