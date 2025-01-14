@@ -21,6 +21,8 @@ void sr_sol(ll arr[], ll query[], ll n, ll k)
 {
     for(int i=0; i<k; i++)
     {
+
+        
         ll ans= without_binary_search(arr, n, query[i]);
         cout<< ans <<endl;
     }
